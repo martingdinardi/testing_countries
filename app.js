@@ -17,7 +17,7 @@ app.get('/', (req, res) => {
   } else {
     res.send("Unknown Country")
   } */
-  res.send(`testing this app shit ${geo}`)
+  res.send(`testing this app shit ${geo.country}`)
 })
 
 app.listen(port, () => {
