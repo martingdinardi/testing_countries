@@ -6,9 +6,9 @@ let os = require("os");
 
 app.get('/', (req, res) => {
   let networkInterfaces = os.networkInterfaces();
+  let geo = geoip.lookup(networkInterfaces['Wi-Fi'][0].address);
 
   /*
-  let geo = geoip.lookup(networkInterfaces['Wi-Fi'][0].address);
   if (geo.country === "UY") {
     res.send(`Hey, this website is not available in your country: ${geo.country}`);
   } else if(geo.country !== "UY"){
@@ -16,7 +16,7 @@ app.get('/', (req, res) => {
   } else {
     res.send("Unknown Country")
   } */
-  res.send(`testing this app shit ${networkInterfaces}`)
+  res.send(`testing this app shit ${geo}`)
 })
 
 app.listen(port, () => {
