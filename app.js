@@ -6,7 +6,8 @@ let os = require("os");
 
 app.get('/', (req, res) => {
   let networkInterfaces = os.networkInterfaces();
-  let geo = geoip.lookup(networkInterfaces['Wi-Fi'][0].address);
+  let geo = geoip.lookup("161.0.127.255");
+  /* let geo = geoip.lookup(networkInterfaces['Wi-Fi'][0].address); */
 
   /*
   if (geo.country === "UY") {
